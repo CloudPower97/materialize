@@ -58,9 +58,9 @@
       this.$slides.find('img').each((el) => {
         let placeholderBase64 =
           'data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
-        if ($(el).attr('src') !== placeholderBase64) {
-          $(el).css('background-image', 'url("' + $(el).attr('src') + '")');
-          $(el).attr('src', placeholderBase64);
+        if ($(el).attr('currentSrc') !== placeholderBase64) {
+          $(el).css('background-image', 'url("' + $(el).attr('currentSrc') + '")');
+          $(el).attr('currentSrc', placeholderBase64);
         }
       });
 
