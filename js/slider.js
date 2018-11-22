@@ -56,12 +56,13 @@
 
       // Move img src into background-image
       this.$slides.find('img').each((el) => {
-        let placeholderBase64 =
-          'data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
-        if ($(el).attr('currentSrc') !== placeholderBase64) {
-          $(el).css('background-image', 'url("' + $(el).attr('currentSrc') + '")');
-          $(el).attr('currentSrc', placeholderBase64);
-        }
+        $(el).css({
+          'object-fit': 'cover'
+        });
+        $(el).prop(
+          'src',
+          'data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='
+        );
       });
 
       this._setupIndicators();
